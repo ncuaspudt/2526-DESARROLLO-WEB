@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif; /* Tipo de letra */
-    font-size: 18px;               /* Tamaño de letra base */
-    color: #090813;                 /* Color del texto */
-    background-color: #e5e7df;     /* Color de fondo opcional */
+    font-family: Arial, sans-serif; 
+    font-size: 18px;               
+    color: #08070a;               
+    background-color: #f1f1ed;    
 }
 
 /* Encabezados */
@@ -49,10 +49,7 @@ th {
 
 /*Formulario*/
 form {
-    border: 2px solid #2a72d4; 
-    padding: 15px;             
-    width: 300px;              
-    border-radius: 5px;        
-    background-color: #0a0e13;
-    
+    bachground-color: #2509c5;
+    padding: 20px;
+    border-radius: 8px;  
 }
