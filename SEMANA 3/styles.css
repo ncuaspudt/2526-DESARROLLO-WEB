@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif; /* Tipo de letra */
+    font-size: 18px;               /* Tamaño de letra base */
+    color: #090813;                 /* Color del texto */
+    background-color: #e5e7df;     /* Color de fondo opcional */
+}
+
+/* Encabezados */
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    color: #0a0e13;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #030b16;
+}
+
+h3 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #01050a;
+}
+
+/* Párrafos */
+p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 2;
+}
+/*Tabla*/
+table {
+    border: 2px solid #0e2749;
+    border-collapse: collapse; 
+    width: 50%;
+}
+
+th, td {
+    border: 1px solid #0f2e5a; 
+    padding: 8px;
+}
+
+th {
+    background-color: #06162c;
+    color:white;
+}
+
+/*Formulario*/
+form {
+    border: 2px solid #2a72d4; 
+    padding: 15px;             
+    width: 300px;              
+    border-radius: 5px;        
+    background-color: #f9f9f9;
+    
+}
