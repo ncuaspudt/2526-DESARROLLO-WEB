@@ -7,17 +7,15 @@ body {
 
 /* Encabezados */
 h1 {
-    font-family: Arial, sans-serif;
-    font-size: 32px;
     color: #0a0e13;
     background-color: #5112c5; 
+
 }
 
-h2 {
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    color: #030b16;
-    background-color: #6765c5;    
+van {
+    color: #b11053;
+    text-decoration: #d2d5d8;
+    font-weight: bold;    
 }
 
 
