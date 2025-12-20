@@ -150,13 +150,13 @@ button {
 }
 
 /* --- MEDIA QUERY --- */
-@media (max-width: 768px) {
+@media (max-width: 608px) {
   .card {
     background-color: rgb(190, 75, 152)(255, 0, 170);
   }
 
   .btn-primary {
-    width: 100%;
+    width: 80%;
   }
 }
 
