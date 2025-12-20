@@ -7,14 +7,16 @@ body {
 
 /* Encabezados */
 h1 {
-    color: #0a0e13;
-    background-color: #5112c5; 
+    color: #186bd1;
+    background-color: #65d818; 
+    font-family: Arial, sans-serif;
+    text-align: center;
 
 }
 
-van {
-    color: #b11053;
-    text-decoration: #d2d5d8;
+nav {
+    color: red;
+    text-decoration: none;
     font-weight: bold;    
 }
 
