@@ -152,7 +152,7 @@ button {
 /* --- MEDIA QUERY --- */
 @media (max-width: 768px) {
   .card {
-    background-color: red;
+    background-color: rgb(190, 75, 152)(255, 0, 170);
   }
 
   .btn-primary {
