@@ -11,6 +11,12 @@ h1 {
     background-color: #769760; 
     font-family: Arial, sans-serif;
     text-align: center;
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: #01050a;
+    background-color: #0c29ac;  
+}
 
 }
 
