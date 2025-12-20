@@ -69,7 +69,7 @@ h2 {
 form {
  
     color: #16060d;
-    border: none;
+   border-radius: 15px;  ;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -136,7 +136,7 @@ button {
 
 .btn-primary:hover {
   background-color: #e64a2e;
-  transform: scale(1.05); /* Animación al pasar el mouse */
+  transform: scale(1.05);
 }
 
 /* --- IMAGEN DENTRO DE CARD --- */
@@ -146,7 +146,7 @@ button {
 }
 
 .card img:hover {
-  transform: scale(1.05); /* Animación al pasar el mouse */
+  transform: scale(1.05);
 }
 
 /* --- MEDIA QUERY --- */
@@ -156,7 +156,7 @@ button {
   }
 
   .btn-primary {
-    width: 100%; /* Botones más anchos en pantallas pequeñas */
+    width: 100%;
   }
 }
 
