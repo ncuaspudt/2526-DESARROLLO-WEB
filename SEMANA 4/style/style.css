@@ -15,9 +15,9 @@ h1 {
 }
 
 nav {
-    color: rgb(197, 14, 14);
+    color: rgb(36, 21, 21);
     text-decoration: none;
-    font-weight: bold;    
+    font-weight: remove bold;
 }
 
 
