@@ -129,13 +129,13 @@ button {
 
 /* --- BOTÓN --- */
 .btn-primary {
-  background-color: #ff5733;
+  background-color: #a54f3c;
   border: none;
   transition: transform 0.3s, background-color 0.3s;
 }
 
 .btn-primary:hover {
-  background-color: #e64a2e;
+  background-color: #d48475;
   transform: scale(1.05);
 }
 
