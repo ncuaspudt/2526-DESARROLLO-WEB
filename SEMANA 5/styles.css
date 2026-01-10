@@ -42,12 +42,6 @@ h2 {
     color: rgb(2, 28, 49);
     background-color: #c7aeb9;
 }
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px; /* más razonable */
-    margin-top: 20px;
-}
 
 .imagen-galeria {
     width: 150px;
