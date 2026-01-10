@@ -45,19 +45,17 @@ h2 {
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 200px; /* Espacio entre imágenes */
+    gap: 15px; /* más razonable */
     margin-top: 20px;
 }
 
 .imagen-galeria {
-    width: 300px;
-    margin: 30px;
+    width: 150px;
+    margin: 10px;
     cursor: pointer;
 }
 
 .seleccionada {
-    border: 4px solid #a70f4e; /* borde azul grueso */
-    box-shadow: 0 0 15px rgba(216, 35, 95, 0.7); /* sombra */
-    transform: scale(1.15); /* pequeño zoom al seleccionar */
+    border: 3px solid red;
 }
 

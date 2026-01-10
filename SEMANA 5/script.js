@@ -1,41 +1,44 @@
-// Traer los elementos del DOM.
+// Traer elementos del DOM
 const inputUrl = document.getElementById("inputUrl");
 const botonCargar = document.getElementById("btnAgregar");
+const botonEliminar = document.getElementById("btnEliminar");
 const galeria = document.getElementById("galeria");
-
 
 let imagenSeleccionada = null;
 
+// Eventos
 botonCargar.addEventListener("click", agregarImagen);
+botonEliminar.addEventListener("click", eliminarImagen);
 
-// Función para agregar un anueva imagen 
+// Función para agregar imagen
 function agregarImagen() {
-const url = inputUrl.value;
-if (url) {
+    const url = inputUrl.value;
+    if (url) {
+        crearImagen(url);
+        inputUrl.value = "";
+    }
+}
+
+// Función para crear la imagen y agregarla al DOM
+function crearImagen(url) {
     const nuevaImagen = document.createElement("img");
-    nuevaImagen.src= url;
+    nuevaImagen.src = url;
     nuevaImagen.classList.add("imagen-galeria");
     nuevaImagen.addEventListener("click", () => seleccionarImagen(nuevaImagen));
     galeria.appendChild(nuevaImagen);
-    inputUrl.value = "";
-}
-}
-// Función para seleccionar una imagen
-function seleccionarImagen (imagen) {
-       if  (imagenSeleccionada) {
-            imagenSeleccionada.classList.remove("seleccionada");
-       }
-
-       imagenSeleccionada = imagen;
-       imagenSeleccionada.classList.add("seleccionada");
 }
 
-// Función para eliminar una imagen
+// Función para seleccionar imagen
+function seleccionarImagen(imagen) {
+    if (imagenSeleccionada) {
+        imagenSeleccionada.classList.remove("seleccionada");
+    }
+    imagenSeleccionada = imagen;
+    imagenSeleccionada.classList.add("seleccionada");
+}
+
+// Función para eliminar imagen seleccionada
 function eliminarImagen() {
-const botonEliminar = document.getElementById("btnEliminar");
-
-botonEliminar.addEventListener("click", eliminarImagen);
-
     if (imagenSeleccionada) {
         imagenSeleccionada.remove();
         imagenSeleccionada = null;
