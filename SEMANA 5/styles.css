@@ -7,6 +7,36 @@ h1 {
     text-align: center;
 
 }
+p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    text-align: left;
+    font-weight: bold;
+}
+label{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    text-align: left;
+    font-weight: bold;
+}
+button{
+     background: linear-gradient(to right, rgb(188, 188, 230));
+    color: #0c051d;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+h2 {
+    color: rgb(2, 28, 49);
+    background-color: #c7aeb9;
+}
+
 .imagen-galeria {
     width: 200px;
     margin: 20px;
