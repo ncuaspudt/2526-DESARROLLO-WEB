@@ -55,7 +55,8 @@ h2 {
     cursor: pointer;
 }
 .seleccionada { 
-    border: 4px solid #a70f4e; /* borde azul grueso */
-    box-shadow: 0 0 15px rgba(216, 35, 95, 0.7); /* sombra */ 
-    transform: scale(1.15); /* pequeño zoom al seleccionar */ }
+    border: 4px solid #c02b69; /* borde azul grueso */
+    box-shadow: 0 0 15px rgba(83, 10, 35, 0.7); /* sombra */ 
+    transform: scale(1.15); /* pequeño zoom al seleccionar */ 
+}
 
