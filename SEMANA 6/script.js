@@ -26,18 +26,24 @@ function marcarInvalido(input, errorElement, mensaje) {
 // Funcion validar nombre
 function validarNombre() {
     const value = nombre.value.trim();
-    const nombreRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const nombreRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,}$/;
+
     if (value.length === 0) {
-        marcarInvalido(nombre, nombreError, "El email es obligatorio");
+        marcarInvalido(nombre, nombreError, "El nombre es obligatorio");
         btnEnviar.disabled = true;
         return false;
     }
+
     if (!nombreRegex.test(value)) {
-        marcarInvalido(nombre, nombreError, "Formato inválido. Ej: "+"@gmail.com");
+        marcarInvalido(nombre, nombreError, "Mínimo 3 letras, sin números");
         btnEnviar.disabled = true;
         return false;
     }
+
+    marcarValido(nombre, nombreError);
+    return true;
 }
+
 // Función validar email
 function validarEmail() {
     const value = email.value.trim();
@@ -109,7 +115,6 @@ function validarFormulario() {
         btnEnviar.disabled = true;
     }
 }
-
 
 //evento en tiempo real
 nombre.addEventListener("input", validarNombre);

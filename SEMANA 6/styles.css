@@ -1,0 +1,13 @@
+.error {
+    color:blue;
+    font-size: 0.8rem;
+}
+input.invalid{
+    border: 2px solid red;
+}
+input.valid{
+    border: 2px solid green;
+}
+.success-message {
+    color: green;
+}
