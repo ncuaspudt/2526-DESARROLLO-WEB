@@ -5,7 +5,7 @@
 
 body {
   margin: 0;
-  background: #c49d9d;
+  background: #dbbfbf;
   min-height: 100vh;
   display: grid;
   place-items: center;
@@ -28,13 +28,12 @@ h1 {
 .field {
   margin-bottom: 14px;
 }
-
 label {
   display: block;
   font-weight: 600;
   margin-bottom: 6px;
 }
-#registroform {
+.registroform {
   background-color: #fff;
   border: 3px solid #467aff;
   border-radius: 14px;
