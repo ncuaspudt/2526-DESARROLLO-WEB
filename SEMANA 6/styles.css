@@ -33,7 +33,7 @@ label {
   font-weight: 600;
   margin-bottom: 6px;
 }
-.registroform {
+#registroform {
   background-color: #fff;
   border: 3px solid #467aff;
   border-radius: 14px;
