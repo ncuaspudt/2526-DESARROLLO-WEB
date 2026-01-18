@@ -3,7 +3,17 @@
 body {
     font-size: 18px;               
     color: #08070a;               
-    background-color: #66d1df;    
+    background-color: #66d1df;  
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+   
+}
+main {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    max-width: 250px;
+    border-radius: 10px;
 }
 h1 {
     text-align: center;
@@ -12,7 +22,7 @@ h1 {
 
 /* Campos */
 .field {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .error {
@@ -23,7 +33,7 @@ input.invalid{
     border: 2px solid red;
 }
 input.valid{
-    border: 2px solid green;
+    border: 5px solid green;
 }
 .success-message {
     color: green;
