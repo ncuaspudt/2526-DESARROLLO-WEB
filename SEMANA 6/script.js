@@ -17,144 +17,176 @@ const passwordError = document.getElementById("passwordError");
 const confirmPasswordError = document.getElementById("confirmPasswordError");
 const edadError = document.getElementById("edadError");
 
-// Función marcar inválido
-function marcarInvalido(input, errorElement, mensaje) {
-    input.classList.add("invalid");
-    input.classList.remove("valid");
-    errorElement.textContent = mensaje;
+// ====== Expresiones regulares ======
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+// Al menos 8 caracteres, mínimo 1 número y 1 carácter especial
+const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*()_\-+=\[\]{};:'",.<>/?\\|`~]).{8,}$/;
 
-}
-function marcarValido(input, errorElement) {
-    input.classList.remove("invalid");
-    input.classList.add("valid");
-    errorElement.textContent = "";
+// ====== Helpers ======
+function setValid(input, errorEl) {
+  input.classList.remove("invalid");
+  input.classList.add("valid");
+  errorEl.textContent = "";
 }
 
-// Funcion validar nombre
+function setInvalid(input, errorEl, msg) {
+  input.classList.remove("valid");
+  input.classList.add("invalid");
+  errorEl.textContent = msg;
+}
+
+function clearState(input, errorEl) {
+  input.classList.remove("valid", "invalid");
+  errorEl.textContent = "";
+}
+
+// ====== Validaciones por campo ======
 function validarNombre() {
-    const value = nombre.value.trim();
-    const nombreRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,}$/;
-
-    if (value.length === 0) {
-        marcarInvalido(nombre, nombreError, "El nombre es obligatorio");
-        btnEnviar.disabled = true;
-        return false;
-    }
-
-    if (!nombreRegex.test(value)) {
-        marcarInvalido(nombre, nombreError, "Mínimo 3 letras, sin números");
-        btnEnviar.disabled = true;
-        return false;
-    }
-
-    marcarValido(nombre, nombreError);
-    return true;
+  const value = nombre.value.trim();
+  if (value.length === 0) {
+    setInvalid(nombre, nombreError, "El nombre es obligatorio.");
+    return false;
+  }
+  if (value.length < 3) {
+    setInvalid(nombre, nombreError, "Mínimo 3 caracteres.");
+    return false;
+  }
+  setValid(nombre, nombreError);
+  return true;
 }
 
-// Función validar email
 function validarEmail() {
-    const value = email.value.trim();
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (value.length === 0) {
-        marcarInvalido(email, emailError, "El correo electrónico es obligatorio");
-        btnEnviar.disabled = true;
-        return false;
-    }
-    if (!emailRegex.test(value)) {
-        marcarInvalido(email, emailError, "Formato de correo inválido. Ej: ejemplo@dominio.com");
-        btnEnviar.disabled = true;
-        return false;
-    }
-    marcarValido(email, emailError); // Si es válido, se puede llamar a la función marcarValido
-    return true;
+  const value = email.value.trim();
+  if (value.length === 0) {
+    setInvalid(email, emailError, "El correo es obligatorio.");
+    return false;
+  }
+  if (!emailRegex.test(value)) {
+    setInvalid(email, emailError, "Formato de correo inválido. Ej:yo@gmail.comm");
+    return false;
+  }
+  setValid(email, emailError);
+  return true;
 }
-// Función validar contraseña
-function validarContraseña() {
-    const value = password.value.trim();
-    const passRegex = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
-    if (value.length === 0) {
-        marcarInvalido(password, passwordError, "La contraseña es obligatoria");
-        btnEnviar.disabled = true;
-        return false;
-    }
-    if (!passRegex.test(value)) {
-        marcarInvalido(password, passwordError, "La contraseña debe tener al menos 8 caracteres, un número y un carácter especial");
-        btnEnviar.disabled = true;
-        return false;
-    }
-    marcarValido(password, passwordError);
-    return true;
+
+function validarPassword() {
+  const value = password.value;
+  if (value.length === 0) {
+    setInvalid(password, passwordError, "La contraseña es obligatoria.");
+    return false;
+  }
+  if (!passwordRegex.test(value)) {
+    setInvalid(
+      password,
+      passwordError,
+      "Mín. 8 caracteres, al menos 1 número y 1 carácter especial."
+    );
+    return false;
+  }
+  setValid(password, passwordError);
+  return true;
 }
-// Función validar confirmación de contraseña
-function validarConfirmarContraseña() {
-    const value = confirmPassword.value.trim();
-    if (value !== password.value) {
-        marcarInvalido(confirmPassword, confirmPasswordError, "Las contraseñas no coinciden");
-        btnEnviar.disabled = true;
-        return false;
-    }
-    marcarValido(confirmPassword, confirmPasswordError);
-    return true;
+
+function validarConfirmPassword() {
+  const value = confirmPassword.value;
+  if (value.length === 0) {
+    setInvalid(confirmPassword, confirmPasswordError, "Debes confirmar la contraseña.");
+    return false;
+  }
+  if (value !== password.value) {
+    setInvalid(confirmPassword, confirmPasswordError, "Las contraseñas no coinciden.");
+    return false;
+  }
+  setValid(confirmPassword, confirmPasswordError);
+  return true;
 }
-// Función validar edad
+
 function validarEdad() {
-    const value = edad.value.trim();
-    if (value < 18) {
-        marcarInvalido(edad, edadError, "Debes ser mayor de 18 años");
-        btnEnviar.disabled = true;
-        return false;
-    }
-    marcarValido(edad, edadError);
-    return true;
-}
-function validarFormulario() {
-    const valido =
-        validarNombre() &&
-        validarEmail() &&
-        validarContraseña() &&
-        validarConfirmarContraseña() &&
-        validarEdad();
-
-    btnEnviar.disabled = !valido; // habilita botón si todo es válido
-    return valido; // devuelve true o false
+  const value = edad.value.trim();
+  if (value.length === 0) {
+    setInvalid(edad, edadError, "La edad es obligatoria.");
+    return false;
+  }
+  const n = Number(value);
+  if (Number.isNaN(n)) {
+    setInvalid(edad, edadError, "Ingresa un número válido.");
+    return false;
+  }
+  if (n < 18) {
+    setInvalid(edad, edadError, "Debes ser mayor o igual a 18 años.");
+    return false;
+  }
+  setValid(edad, edadError);
+  return true;
 }
 
+function actualizarEstadoBoton() {
+  const ok =
+    validarNombre() &&
+    validarEmail() &&
+    validarPassword() &&
+    validarConfirmPassword() &&
+    validarEdad();
 
-//evento en tiempo real
-nombre.addEventListener("input", validarNombre);
-email.addEventListener("input", validarEmail);
-password.addEventListener("input", validarContraseña);
-confirmPassword.addEventListener("input", validarConfirmarContraseña);
-edad.addEventListener("input", validarEdad);
+  btnEnviar.disabled = !ok;
+  return ok;
+}
 
-btnReset.addEventListener("click", () => {
+// ====== Eventos en tiempo real ======
+nombre.addEventListener("input", () => {
+  validarNombre();
+  actualizarEstadoBoton();
+});
+
+email.addEventListener("input", () => {
+  validarEmail();
+  actualizarEstadoBoton();
+  msg.textContent = "";
+});
+
+password.addEventListener("input", () => {
+  validarPassword();
+  // si cambia la contraseña, revalidar confirmación
+  if (confirmPassword.value.length > 0) validarConfirmPassword();
+  actualizarEstadoBoton();
+});
+
+confirmPassword.addEventListener("input", () => {
+  validarConfirmPassword();
+  actualizarEstadoBoton();
+});
+
+edad.addEventListener("input", () => {
+  validarEdad();
+  actualizarEstadoBoton();
+});
+
+// ====== Envío del formulario ======
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  mensajeExito.textContent = "";
+  const ok = actualizarEstadoBoton();
+
+  if (ok) {
+    alert("✅ Formulario validado correctamente. ¡Registro exitoso!");
+    mensajeExito.textContent = "✅ Validación exitosa. Puedes enviar tus datos con seguridad.";
     form.reset();
     btnEnviar.disabled = true;
+
+    // limpiar estilos/errores tras reset manual
+    [nombre, email, password, confirmPassword, edad].forEach((inp) => inp.classList.remove("valid", "invalid"));
+    [nombreError, emailError, passwordError, confirmPasswordError, edadError].forEach((el) => (el.textContent = ""));
+  }
 });
 
-// Envío del formulario
-// Validación completa en submit
-form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Evita que la página se recargue
+// ====== Reset ======
+form.addEventListener("reset", () => {
+  mensajeExito.textContent = "";
+  btnEnviar.disabled = true;
 
-    // Valida todos los campos
-    const valido = validarFormulario();
-
-    if (valido) {
-        // Mostrar mensaje de éxito
-        mensajeExito.textContent = "Formulario enviado correctamente ✅";
-
-        // Resetear formulario
-        form.reset();
-
-        // Deshabilitar botón de nuevo
-        btnEnviar.disabled = true;
-
-        // Opcional: limpiar estilos de validación
-        const inputs = [nombre, email, password, confirmPassword, edad];
-        inputs.forEach(input => input.classList.remove("valid"));
-    } else {
-        mensajeExito.textContent = ""; // Limpiar mensaje si algo falla
-    }
+  setTimeout(() => {
+    [nombre, email, password, confirmPassword, edad].forEach((inp) => inp.classList.remove("valid", "invalid"));
+    [nombreError, emailError, passwordError, confirmPasswordError, edadError].forEach((el) => (el.textContent = ""));
+  }, 0);
 });
-
