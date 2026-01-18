@@ -24,6 +24,12 @@ function marcarInvalido(input, errorElement, mensaje) {
     errorElement.textContent = mensaje;
 
 }
+function marcarValido(input, errorElement) {
+    input.classList.remove("invalid");
+    input.classList.add("valid");
+    errorElement.textContent = "";
+}
+
 // Funcion validar nombre
 function validarNombre() {
     const value = nombre.value.trim();
