@@ -107,7 +107,6 @@ function validarEdad() {
     marcarValido(edad, edadError);
     return true;
 }
-// Validar todo el formulario
 function validarFormulario() {
     const valido =
         validarNombre() &&
@@ -116,8 +115,10 @@ function validarFormulario() {
         validarConfirmarContraseña() &&
         validarEdad();
 
-    btnEnviar.disabled = !valido;
+    btnEnviar.disabled = !valido; // habilita botón si todo es válido
+    return valido; // devuelve true o false
 }
+
 
 //evento en tiempo real
 nombre.addEventListener("input", validarNombre);
@@ -126,16 +127,34 @@ password.addEventListener("input", validarContraseña);
 confirmPassword.addEventListener("input", validarConfirmarContraseña);
 edad.addEventListener("input", validarEdad);
 
-btnEnviar.addEventListener("click", validarFormulario);
 btnReset.addEventListener("click", () => {
     form.reset();
     btnEnviar.disabled = true;
 });
 
 // Envío del formulario
+// Validación completa en submit
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    mensajeExito.textContent = "Formulario enviado correctamente ✅";
-    form.reset();
-    btnEnviar.disabled = true;
+    e.preventDefault(); // Evita que la página se recargue
+
+    // Valida todos los campos
+    const valido = validarFormulario();
+
+    if (valido) {
+        // Mostrar mensaje de éxito
+        mensajeExito.textContent = "Formulario enviado correctamente ✅";
+
+        // Resetear formulario
+        form.reset();
+
+        // Deshabilitar botón de nuevo
+        btnEnviar.disabled = true;
+
+        // Opcional: limpiar estilos de validación
+        const inputs = [nombre, email, password, confirmPassword, edad];
+        inputs.forEach(input => input.classList.remove("valid"));
+    } else {
+        mensajeExito.textContent = ""; // Limpiar mensaje si algo falla
+    }
 });
+
