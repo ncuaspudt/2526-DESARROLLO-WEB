@@ -1,3 +1,20 @@
+
+
+body {
+    font-size: 18px;               
+    color: #08070a;               
+    background-color: #a881db;    
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Campos */
+.field {
+    margin-bottom: 15px;
+}
+
 .error {
     color:blue;
     font-size: 0.8rem;
