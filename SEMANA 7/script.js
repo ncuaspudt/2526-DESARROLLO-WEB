@@ -1,5 +1,6 @@
 // Referencias
 const productlist = document.getElementById("productlist");
+const btnAgregar = document.getElementById("btnAgregar");
 // Arreglo que almacenará los productos
 const productos = [
     { nombre: "Arroz", precio: "$10", descripcion: "10 libras de arroz" },
@@ -45,4 +46,6 @@ function agregarProducto() {
 }
 
 // Evento para el botón de agregar producto
-document.getElementById("btnAgregar").addEventListener("click", agregarProducto);
+btnAgregar.addEventListener("click", () => {
+    agregarProducto();
+});
