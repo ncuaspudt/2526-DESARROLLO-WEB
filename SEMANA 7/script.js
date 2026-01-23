@@ -1,19 +1,19 @@
+// Referencias
+const productlist = document.getElementById("productlist");
 // Arreglo que almacenará los productos
 const productos = [
-    { nombre: "Producto 1", precio: "$10", descripcion: "Descripción del Producto 1" },
-    { nombre: "Producto 2", precio: "$20", descripcion: "Descripción del Producto 2" },
-    { nombre: "Producto 3", precio: "$30", descripcion: "Descripción del Producto 3" }
+    { nombre: "Arroz", precio: "$10", descripcion: "10 libras de arroz" },
+    { nombre: "Fréjol", precio: "$20", descripcion: "10 libras de frejol" },
+    { nombre: "Maíz", precio: "$30", descripcion: "10 libras maiz" }
 ];
 
-// Referencia al elemento <ul> donde se mostrarán los productos
-const productList = document.getElementById("product-list");
 
 // Función para mostrar la lista de productos
 function renderizarProductos() {
-    // Limpia la lista antes de agregar los nuevos productos
-    productList.innerHTML = "";
+    // Limpia la lista 
+    productlist.innerHTML = "";
 
-    // Itera sobre los productos y los agrega al <ul>
+    // Itera sobre los productos
     productos.forEach(producto => {
         const li = document.createElement("li");
         li.innerHTML = `
@@ -21,20 +21,20 @@ function renderizarProductos() {
             Precio: ${producto.precio}<br>
             ${producto.descripcion}
         `;
-        productList.appendChild(li);
+        productlist.appendChild(li);
     });
 }
 
-// Llama a la función para mostrar los productos cuando cargue la página
+// Llama a la función 
 renderizarProductos();
 
 // Función para agregar un nuevo producto
 function agregarProducto() {
-    // Crea un nuevo producto con valores simples
+    // Crea un nuevo producto 
     const nuevoProducto = {
-        nombre: "Nuevo Producto",
-        precio: "$50",
-        descripcion: "Descripción de un nuevo producto"
+        nombre: "Producto 4",
+        precio: "$30",
+        descripcion: "10 libras de maicena"
     };
 
     // Agrega el nuevo producto al arreglo
@@ -45,4 +45,4 @@ function agregarProducto() {
 }
 
 // Evento para el botón de agregar producto
-document.getElementById("add-product-btn").addEventListener("click", agregarProducto);
+document.getElementById("btnAgregar").addEventListener("click", agregarProducto);
