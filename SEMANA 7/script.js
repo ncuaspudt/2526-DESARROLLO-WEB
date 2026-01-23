@@ -33,7 +33,7 @@ renderizarProductos();
 function agregarProducto() {
     // Crea un nuevo producto 
     const nuevoProducto = {
-        nombre: "Producto 4",
+        nombre: "Maicena",
         precio: "$30",
         descripcion: "10 libras de maicena"
     };
