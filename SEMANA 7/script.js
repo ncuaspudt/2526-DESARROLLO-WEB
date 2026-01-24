@@ -1,11 +1,11 @@
-// Referencias
+// Referencias-DOM
 const productlist = document.getElementById("productlist");
 const btnAgregar = document.getElementById("btnAgregar");
 // Arreglo que almacenará los productos
 const productos = [
-    { nombre: "Arroz", precio: "$10", descripcion: "10 libras de arroz" },
-    { nombre: "Fréjol", precio: "$20", descripcion: "10 libras de frejol" },
-    { nombre: "Maíz", precio: "$30", descripcion: "10 libras maiz" }
+    { nombre: "Tablet", precio: "$200", descripcion: "Dispositivo electrónico portátil con una pantalla táctil grande" },
+    { nombre: "Laptop", precio: "$600", descripcion: "Contiene teclado, panel táctil (touchpad), altavoces " },
+    { nombre: "Auriculares", precio: "$30", descripcion: "Reciben señales eléctricas de un equipo de audio" }
 ];
 
 
@@ -33,9 +33,9 @@ renderizarProductos();
 function agregarProducto() {
     // Crea un nuevo producto 
     const nuevoProducto = {
-        nombre: "Maicena",
-        precio: "$30",
-        descripcion: "10 libras de maicena"
+        nombre: "Parlantes",
+        precio: "$700",
+        descripcion: "Dispositivo electroacústico"
     };
 
     // Agrega el nuevo producto al arreglo
