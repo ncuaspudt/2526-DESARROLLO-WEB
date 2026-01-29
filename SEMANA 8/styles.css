@@ -1,0 +1,108 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e7eeec;
+}
+
+h2 {
+    color: #b60e0e;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #343a40;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #f8f9fa !important;
+}
+
+/* Carrusel */
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos de la tabla */
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table {
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.table-bordered th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table-bordered td {
+    padding: 15px;
+}
+
+/* Estilos de los formularios */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de pie de página */
+footer {
+    background-color: #343a40;
+    padding: 20px;
+    color: #fff;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para las imágenes de redes sociales */
+footer img {
+    width: 30px;
+    height: 30px;
+}

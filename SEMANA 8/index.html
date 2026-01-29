@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Web de Tecnología</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ENCABEZADO (MENÚ DE NAVEGACIÓN) -->
+    <header class="bg-dark text-white p-3">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">Tienda online de Tecnología</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CARRUSEL DE IMÁGENES -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagen/Iphone.jpg" class="d-block" width="800" alt="iPhone 13 Pro">
+            </div>
+            <div class="carousel-item">
+                <img src="imagen/celular.jpg" class="d-block" width="800" alt="Samsung Galaxy S21">
+            </div>
+            <div class="carousel-item">
+                <img src="imagen/MacBook Pro 16.jpg" class="d-block" width="800" alt="MacBook Pro 16 M1">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- SECCIÓN DE PRODUCTOS -->
+    <section id="productos" class="container my-5">
+        <h2 class="text-center mb-4">Nuestros Productos</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="imagen/Iphone.jpg" alt="iPhone 13 Pro" width="50"></td>
+                    <td>iPhone 13 Pro</td>
+                    <td>$1500</td>
+                    <td>Smartphone de Apple con procesador A15 Bionic.</td>
+                </tr>
+                <tr>
+                    <td><img src="imagen/celular.jpg" alt="Samsung Galaxy S21" width="50"></td>
+                    <td>Samsung Galaxy S21</td>
+                    <td>$900</td>
+                    <td>Smartphone de Samsung con cámara de 64 MP.</td>
+                </tr>
+                <tr>
+                    <td><img src="imagen/MacBook Pro 16.jpg" alt="MacBook Pro 16" width="50"></td>
+                    <td>MacBook Pro 16"</td>
+                    <td>$2000</td>
+                    <td>Computadora portátil de Apple con chip M1 Pro.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section id="contacto" class="container my-5">
+        <h2 class="text-center mb-4">Contacto</h2>
+        <form id="formContacto">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correo" required>
+            </div>
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>Síguenos en nuestras redes sociales</p>
+        <a href="https://facebook.com" target="_blank">
+            <img src="imagen/facebook.jpg" alt="Facebook" width="30">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img src="imagen/twitter.jpg" alt="Twitter" width="30">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="imagen/instagram.png" alt="Instagram" width="30">
+        </a>
+    </footer>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
