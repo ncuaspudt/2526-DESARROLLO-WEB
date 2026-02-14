@@ -9,15 +9,14 @@ def hello_world():
 
 
 # ruta con parametro
-@app.route('/usuario/<nombre>')
-def usuario(nombre):
-    return f'Hola, {nombre}!'
-
-
+@app.route(*/usuario/<nombre>'')
+def  usuario(nombre):
+    return f'Bienvenido estas en clase, { nombre}!'
 # ruta con contacto
 @app.route('*/contacto')
 def  contacto():
     return '../template/vistas/contacto.html'
+
 
 if __name__ == '__main__':
     app.run(debug=True)
