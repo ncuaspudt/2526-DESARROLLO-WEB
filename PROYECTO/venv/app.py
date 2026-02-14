@@ -7,8 +7,7 @@ def hello_world():
     return '¡Hola, mundo!'
     
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
 # ruta con parametro
 @app.route(*/usuario/<nombre>'')
 def  usuario(nombre):
@@ -19,3 +18,5 @@ def  contacto():
     return '../template/vistas/contacto.html'
 
 
+if __name__ == '__main__':
+    app.run(debug=True)
