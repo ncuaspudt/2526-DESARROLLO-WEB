@@ -5,18 +5,15 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return '¡Hola, mundo!'
-    
 
-
-# ruta con parametro
+# Ruta con parámetro
 @app.route('/usuario/<nombre>')
 def usuario(nombre):
     return f'Hola, {nombre}!'
 
-
-# ruta con contacto
-@app.route('*/contacto')
-def  contacto():
+# Ruta con contacto
+@app.route('/contacto')
+def contacto():
     return '../template/vistas/contacto.html'
 
 if __name__ == '__main__':
